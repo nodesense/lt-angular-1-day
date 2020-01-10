@@ -1,0 +1,14 @@
+<h2>Contact</h2>
+
+<app-address [address]="headOffice"
+             (emailEvent)="emailToAddress($event)"
+>
+    <!-- content children -->
+    <h4>Head Office</h4>
+</app-address>
+
+<app-address [address]="branchOffice"
+            (emailEvent)="emailToAddress($event)"
+>
+    <h4>Branch Office</h4>
+</app-address>

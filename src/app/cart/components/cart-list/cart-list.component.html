@@ -1,0 +1,18 @@
+<h4>Items</h4>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Amount</th>
+    </tr>
+
+    <tr *ngFor="let item of items">
+        <td>{{item.name}}</td>
+        <td>{{item.price | currency:'INR'}}</td>
+        <td>{{item.qty}}</td>
+
+        <td>{{ (item.qty * item.price) | currency:'INR'}}</td>
+    </tr>
+</table>

@@ -1,0 +1,16 @@
+<div>
+
+<ng-content>
+    <!-- content children are displayed here-->
+</ng-content>
+
+ <p>City {{address?.city}}</p>
+ <p>State {{address?.state}} </p>
+ <p *ngIf="address?.pincode">
+     Pincode {{address?.pincode}}
+ </p>
+</div>
+
+<button (click)="email()">
+    Email
+</button>

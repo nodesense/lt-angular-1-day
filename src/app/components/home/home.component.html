@@ -1,0 +1,82 @@
+<h2>Home</h2>
+
+<!---
+
+    {{expr}} - interpolation 
+                convert the result to string
+    [] - property binding
+        [attrName] = "expr"
+
+    () - event binding 
+        (eventName) = "expr"
+
+
+    DIRECTIVES
+    *ngIf 
+        * structural directive
+            add/remove dom ELEMENTS
+
+    ngClass, but no *
+        attribute directive
+            manipulate attribute in dom element
+            add/remove ATTRIBUTE
+
+    PIPES
+        formatting, filtering, sorting
+        | 
+
+        {{ title | uppercase  }}
+
+
+    ?. -- elvis operator, null check
+-->
+
+
+<p> Address {{address?.city}} </p>
+
+<p> counter {{counter}}</p>
+
+<p> counter + 2 = {{counter + 2}} </p>
+
+<input [value]="counter * 3" >
+
+<button [disabled]="counter % 2 == 1">
+    Enabled/Disabled
+</button>
+
+<p *ngIf="counter % 2 == 0">{{counter}} Even Number</p>
+
+
+
+<p [ngClass]=" { odd: counter % 2 == 1, even: counter % 2 == 0 } "> {{counter}} Counter with color </p>
+
+<button (click)="increment()"> +1 </button>
+
+<button (click)="incrementBy(2)"> +2 </button>
+
+<button (click)="decrement($event)"> -1 </button>
+
+<button (click)="counter = counter - 2"> -2 </button>
+
+
+<!-- pipes -->
+
+<p> {{title}} </p>
+
+<p> {{title | uppercase}} </p>
+<p> {{title | lowercase}} </p>
+
+<p> Price {{price}}</p>
+
+<p> Price {{price | currency}}</p>
+<p> Price {{price | currency:'INR'}}</p>
+<p> Price {{price | currency:'EUR'}}</p>
+
+<p> Price {{ (price * qty) | number}} </p>
+
+
+<p> Today  {{today}} </p>
+<p> Today  {{today | date}} </p>
+<p> Today  {{today | date:'yyyy/MM/dd' }} </p>
+
+ 

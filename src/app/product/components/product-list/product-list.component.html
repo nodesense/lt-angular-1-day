@@ -1,0 +1,18 @@
+<h2>Product List</h2>
+
+<h4>Items</h4>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let product of (products$ | async)">
+        <td>{{product.name}}</td>
+        <td>{{product.price | currency:'INR'}}</td>
+        
+        <td> <button (click)="addToCart(product)">+Cart</button> </td>
+    </tr>
+</table>
